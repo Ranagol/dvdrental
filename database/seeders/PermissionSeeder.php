@@ -10,8 +10,10 @@ use Spatie\Permission\PermissionRegistrar;
 class PermissionSeeder extends Seeder
 {
     /**
-     * Create this seeder with: php artisan make:seed PermissionSeeder
-     * Run the database seeds with this command:
+     * This seeder will create 3 users, 3 roles, 4 permissions. 
+     * 1. Create this seeder with: php artisan make:seed PermissionSeeder
+     * 2. Copy from here everything from the run() into the newly created PermissionSeeder@run
+     * 3. Run the database seeds with this command:
      * php artisan migrate:fresh --seed --seeder=PermissionSeeder
      *  
      * @return void
