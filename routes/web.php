@@ -35,6 +35,8 @@ Route::get('/test-db', function () {
     return view('welcome');
 });
 
+Route::get('get-data','App\Http\Controllers\SqlTestController@getData');
+
 
 
 Route::get('send-mail','App\Http\Controllers\EmailController@sendMail');
