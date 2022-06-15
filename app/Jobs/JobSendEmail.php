@@ -33,9 +33,16 @@ class JobSendEmail implements ShouldQueue
      */
     public function handle()
     {
+        //Create one email
         $email = new Reminder('Text from the JobSendEmail class');
-        echo 'Echo from JobSendEmail.php' . PHP_EOL;
+
+        //Every job is set up to last 2 second. So we can follow.
         sleep(2);
+
+        //Sending mail...
         Mail::to('andorhorvat@gmail.com')->send($email);
+
+        //This echo is needed to illustrate the job execution in the cli
+        echo 'Job executed!!' . PHP_EOL;
     }
 }
