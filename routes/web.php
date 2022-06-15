@@ -5,16 +5,6 @@ use App\Http\Controllers\TestQueueEmails;
 use App\Http\Controllers\JobController;
 use Illuminate\Support\Facades\DB;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
 /**
  * This app is here.
@@ -29,15 +19,18 @@ Route::get('/dvd-rental', function () {
  */
 Route::get('/test-db', function () {
     if(DB::connection()->getDatabaseName()){
-        echo "Connected sucessfully to database ".DB::connection()->getDatabaseName().".";
+        echo "Connected sucessfully to database " . DB::connection()->getDatabaseName() . ".";
     }
 
     return view('welcome');
 });
 
+//Used for sql testing in dvdrental db.
 Route::get('get-data','App\Http\Controllers\SqlTestController@getData');
 
 
-
+//This is simple mail sending, it is not connected to jobs and queues topic.
 Route::get('send-mail','App\Http\Controllers\EmailController@sendMail');
+
+//Here we trigger a job.
 Route::get('job','App\Http\Controllers\JobController@processQueue');

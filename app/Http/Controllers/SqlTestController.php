@@ -3,18 +3,31 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class SqlTestController extends Controller
 {
     /**
-     * /sql-tests
+     * http://127.0.0.1:8000/get-data
      *
      * @return void
      */
     public function getData()
     {
 
-        $data = 'test';
+
+        $data = DB::select(
+            DB::raw(
+                "select * from actor"
+            )
+        );
+
+
+
+
+
+        $t = 9;
+
 
         return view('postgres', compact('data'));
     }

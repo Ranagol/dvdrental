@@ -34,6 +34,8 @@ class JobSendEmail implements ShouldQueue
     public function handle()
     {
         $email = new Reminder('Text from the JobSendEmail class');
+        echo 'Echo from JobSendEmail.php' . PHP_EOL;
+        sleep(2);
         Mail::to('andorhorvat@gmail.com')->send($email);
     }
 }

@@ -20,9 +20,18 @@ class EmailController extends Controller
      */
     public function sendMail()
     {
-        $to_email = 'makitabecej@gmail.com';//receiver address
+        $to_email = 'andorhorvat@gmail.com';//receiver address
 
-        Mail::to($to_email)->send(new Reminder('Here we are testing how to pass data from the controller to the Mailable class'));//here we declare to who we are sending the email
+        Mail::to($to_email)
+            ->send(
+                    new Reminder(
+                        'This is a testing email from dvdrental app.'
+                    )
+        );
+
+        $t = 8;
+
+        sleep(10);
 
         return "E-mail has been sent Successfully";
     }
