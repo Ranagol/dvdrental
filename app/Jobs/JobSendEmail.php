@@ -11,10 +11,11 @@ use Illuminate\Queue\SerializesModels;
 //for email sending we will need...
 use Mail;//this is the Mail facade, responsible
 use App\Mail\Reminder;//and this is the Mailable.
+use romanzipp\QueueMonitor\Traits\IsMonitored;
 
 class JobSendEmail implements ShouldQueue
 {
-    use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
+    use Dispatchable, InteractsWithQueue, Queueable, SerializesModels, IsMonitored;
 
     /**
      * Create a new job instance.

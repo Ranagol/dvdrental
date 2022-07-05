@@ -36,3 +36,7 @@ Route::get('send-mail','App\Http\Controllers\EmailController@sendMail');
 Route::get('job','App\Http\Controllers\JobController@processQueue');
 
 //NOTE: I also tested Spatie Permissions here. The installing part.
+
+Route::prefix('jobs')->group(function () {
+    Route::queueMonitor();
+});
