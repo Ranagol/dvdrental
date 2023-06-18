@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
-
-use Illuminate\Http\Request;
-use App\Http\Requests;
 use Mail;
+
+use App\Http\Requests;
 use App\Mail\Reminder;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Barryvdh\Debugbar\Facades\Debugbar;
 
 class EmailController extends Controller
 {
@@ -21,14 +22,12 @@ class EmailController extends Controller
     public function sendMail()
     {
         $to_email = 'andorhorvat@gmail.com';//receiver address
-
         Mail::to($to_email)
             ->send(
                     new Reminder(
                         'This is a testing email from dvdrental app.'
                     )
         );
-
         $t = 8;
 
         sleep(10);

@@ -42,3 +42,13 @@ Route::prefix('jobs')->group(function () {
 
 //Here we play with the MyCustomException to understand how the exceptions work in Laravel
 Route::get('trigger-exception','App\Http\Controllers\TriggerExceptionController@trigger');
+
+/**
+ * For practising the Events and Listeners story...
+ */
+//Display the page for creating an event
+Route::get('create-event','App\Http\Controllers\EventController@displayCreateEventPage');
+//When the user clicks on the 'Create event' buttton.
+Route::get('button-clicked','App\Http\Controllers\EventController@triggerButtonClickedEvent');
+
+

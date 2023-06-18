@@ -5,7 +5,16 @@ dvdrental is a Laravel app, that I used to learn and practice PostgreSQL. The po
 explanation. This database is about movies, customers...
 
 # Reminder for me 
-Use DBeaver for this app.
+The DB is in postgres. Check if the postgres service is running.
+Open Run Window by Winkey + R.
+Type services. msc.
+Search Postgres service based on version installed.
+Click stop, start or restart the service option.
+
+Use DBeaver once the postgres is running.
+
+# Start the app
+run 'php artisan serve' in CLI, then go to http://127.0.0.1:8000/dvd-rental.
 
 # Features
 
@@ -20,5 +29,16 @@ app\Http\Controllers\JobController.php
 
 ## Sending emails
 app/Http/Controllers/EmailController.php
+
+## Events and Listeners
+When the user clicks the 'EventCreator' button (that is on the /event-creator page), that will send a GET request. The router will trigger the EventController.
+
+## Debugbar
+... is installed.
+
+## Telescope
+... is here: http://127.0.0.1:8000/telescope
+
+
 
 
