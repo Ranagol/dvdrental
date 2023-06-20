@@ -41,6 +41,18 @@ When the user clicks the 'EventCreator' button (that is on the http://127.0.0.1:
 ## Telescope
 ... is here: http://127.0.0.1:8000/telescope
 
+## Slack
+The app uses https://github.com/spatie/laravel-slack-alerts#quickly-send-a-message-to-slack package
+for sending a simple, hardcoded message to Slack. Now, for this to work, the Job/Queueu system must 
+be set up also, this is mandatory, because the Spatie package uses Jobs. So in order to use this
+feature locally, you need  terminals open:
+1. php artisan serve (starts the Laravel server)
+2. php artisan queue:work (starts the queue watcher LOCALLY)
+
+app\Http\Controllers\SlackController.php
+
+
+
 
 
 
