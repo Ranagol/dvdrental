@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\DB;
  * First, do 'php artisan serve'. Then, go to this link below:
  * http://127.0.0.1:8000/dvd-rental
  */
-Route::get('/dvd-rental', function () {
+Route::get('/', function () {
     return view('welcome');
 });
 
@@ -49,6 +49,12 @@ Route::get('trigger-exception','App\Http\Controllers\TriggerExceptionController@
 //Display the page for creating an event
 Route::get('create-event','App\Http\Controllers\EventController@displayCreateEventPage');
 //When the user clicks on the 'Create event' buttton.
-Route::get('button-clicked','App\Http\Controllers\EventController@triggerButtonClickedEvent');
+Route::post('button-clicked','App\Http\Controllers\EventController@triggerButtonClickedEvent');
+
+/**
+ * For sending a Slack message
+ */
+Route::post('send-slack-message','App\Http\Controllers\SlackController@sendSlackMessage');
+
 
 

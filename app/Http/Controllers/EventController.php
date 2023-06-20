@@ -27,8 +27,11 @@ class EventController extends Controller
      * @param Request $request
      * @return void
      */
-    public function triggerButtonClickedEvent(Request $request): void
+    public function triggerButtonClickedEvent(Request $request)
     {
         ButtonClickedEvent::dispatch();
+        return redirect('/create-event');
     }
+
+
 }
