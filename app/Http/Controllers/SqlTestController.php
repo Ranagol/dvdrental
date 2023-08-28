@@ -14,20 +14,15 @@ class SqlTestController extends Controller
      */
     public function getData()
     {
-
-
+        // echo '*************';
+        $t = 8;
         $data = DB::select(
             DB::raw(
                 "select * from actor"
             )
         );
 
-
-
-
-
         $t = 9;
-
 
         return view('postgres', compact('data'));
     }
