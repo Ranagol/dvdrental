@@ -7,7 +7,7 @@ explanation. This database is about movies, customers...
 # Reminder for me 
 The DB is in postgres. Check if the postgres service is running.
 Open Run Window by Winkey + R.
-Type services. msc.
+Type services.msc
 Search Postgres service based on version installed.
 Click stop, start or restart the service option.
 
@@ -36,7 +36,7 @@ app/Http/Controllers/EmailController.php
 When the user clicks the 'EventCreator' button (that is on the http://127.0.0.1:8000/create-event page), that will send a GET request. The router will trigger the EventController.
 
 ## Debugbar
-... is installed.
+... is installed. You can use either Debugbar, or Telescope.
 
 ## Telescope
 ... is here: http://127.0.0.1:8000/telescope
